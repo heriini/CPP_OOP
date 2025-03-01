@@ -10,7 +10,7 @@ class Mahasiswa{
         double ipk;
 };
 
-int main(){
+int main(){ 
 
     // kelas Mahasiswa dengan object mahasiswa1
     Mahasiswa mahasiswa1;
