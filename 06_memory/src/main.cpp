@@ -21,6 +21,10 @@ class WithoutConstructor{
         std::string data; //32 byte
         // int data1;       // 4 byte
 
+        WithoutConstructor(const char* nama){
+            WithoutConstructor::data = nama;
+        }
+
         // void show(){
         //     std::cout << "ini " << WithoutConstructor::data << std::endl;
         // }
@@ -53,13 +57,21 @@ int main(){
     std::cout << "Alokasi class Constructor : " << sizeof(WithoutConstructor) << " byte" << std::endl;
 
     std::string a,b,c,d;
-
+    WithoutConstructor object1 = WithoutConstructor("Yono");
+    
     std::cout << "\nAddress stack" << std::endl;
+    WithoutConstructor* object2 = new WithoutConstructor("Yudi");
+
     std::cout << &a << std::endl;
     std::cout << &b << std::endl;
+    std::cout << &object1 << std::endl;
+    std::cout << &object2 << std::endl;
+    std::cout << object2 << std::endl;
     std::cout << &c << std::endl;
     std::cout << &d << std::endl;
+    
 
+    
 
     return 0;
 }
