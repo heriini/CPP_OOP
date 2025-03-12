@@ -1,37 +1,27 @@
 #include <iostream>
 #include <string>
 
-class Player{
+class ClassType{
     public:
-        std::string nama;
+        std::string dataStr;
+        double dataDouble;
+        double m_dataDouble;
 
-        //Construtor
-        Player(const char* nama){
-            Player::nama = nama;
-            std::cout << "player " << Player::nama << " dibuat" << std::endl;
-        }
+        ClassType(const char* dataStr, double dataDouble){
 
-        //Destructor
-        ~Player(){
-            std::cout << "player " << Player::nama << " dihapus" << std::endl;
+            //menggunakan namespace dari class
+            ClassType::dataStr = dataStr;
+
+            //menggunakan "this"
+            this->dataDouble = dataDouble;
         }
 };
 
-void membuatPlayerStack(){
-    Player stackPlayer = Player("stack ");
-}
+int main(){
 
-void membuatPlayerHeap(){
-    Player* heapPlayer = new Player("heap");
-    delete heapPlayer;
-}
+    ClassType* object1 = new ClassType("object 1", 1.8); 
+    std::cout << object1->dataStr << std::endl;
 
-
-int main(){ 
-
-    membuatPlayerStack();
-    membuatPlayerHeap();
-    
     return 0;
 }
 
