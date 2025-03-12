@@ -1,27 +1,51 @@
 #include <iostream>
 #include <string>
 
-class ClassType{
+// Deklarasi class
+class Player{
     public:
-        std::string dataStr;
-        double dataDouble;
-        double m_dataDouble;
+        std::string name;
+        
+        // Constructor
+        Player(const char*);        //dalam bentuk prototype
+        void display();             //dalam bentuk prototype
+        std::string getName();
+        void setName(const char*);
+        
+    };
+    
+    int main(){
+        
+        Player* playerObject = new Player("Yono");
+        playerObject->display();
 
-        ClassType(const char* dataStr, double dataDouble){
+        std::cout << "Get Name : " << playerObject->getName() << std::endl;
 
-            //menggunakan namespace dari class
-            ClassType::dataStr = dataStr;
+        std::cout << "\nUbah Nama" << std::endl;
+        playerObject->setName("Yuda");
+        playerObject->display();
 
-            //menggunakan "this"
-            this->dataDouble = dataDouble;
-        }
-};
+        return 0;
+    }
+    
+// Penjabaran method
 
-int main(){
 
-    ClassType* object1 = new ClassType("object 1", 1.8); 
-    std::cout << object1->dataStr << std::endl;
-
-    return 0;
+Player::Player(const char* name){
+    this->name = name;
 }
 
+// show data
+void Player::display(){
+    std::cout << "Nama player : " << this->name << std::endl;
+}
+
+// getname
+std::string Player::getName(){
+    return this->name;
+}
+
+// setname
+void Player::setName(const char* name){
+    this->name = name;
+}
