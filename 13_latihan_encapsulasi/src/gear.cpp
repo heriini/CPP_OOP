@@ -3,13 +3,18 @@
 
 #include "../inc/gear.hpp"
 
-Gear::Gear(const char* name, double attack){
+Gear::Gear(const char* name, double power){
     this->name = name;
-    this->attack = attack;
+    this->power = power;
 }
 
-void Gear::display(){
-    std::cout << "Gear   : " << this->name << std::endl;
-    std::cout << "Attack : " << this->attack << std::endl;
+
+// getter
+std::string Gear::getName(){
+    return this->name;
 }
 
+// getter
+double Gear::getPower(){
+    return this->power;
+}

@@ -3,15 +3,23 @@
 
 #include <string>
 
+#include "gear.hpp"
+
 class Hero{
     private:
         std::string name;
-        int level;
-        int exp;
+        double health;
+        Gear* gear;
+
     
     public:
         Hero(const char* name);
         void display();
+        void attack(Hero* hero);
+
+        std::string getName();
+        void useGear(Gear* gear);
+        void defence(double damage);
 };
 
 #endif

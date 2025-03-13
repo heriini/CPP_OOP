@@ -7,11 +7,12 @@
 class Gear{
     private:
         std::string name;
-        double attack;
+        double power;
 
     public:
-        Gear(const char* name, double attack);
-        void display();
+        Gear(const char* name, double power);
+        std::string getName();
+        double getPower();
 
 };
 
